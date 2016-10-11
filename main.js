@@ -70,7 +70,7 @@ function sBin(str){
 		var ts = ubBin(str.charCodeAt(i));
 		var k = 0;
 		for(k = ts.length;k<8;k++){ts = "0"+ts;}
-		t = ts+t;
+		t = t+ts;
 	}
 	return t;
 }
