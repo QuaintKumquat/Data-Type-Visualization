@@ -77,7 +77,7 @@ function sBin(str){
 
 function showBytes(b,str){
     var i = 0;
-
+	showHEx(str);
     //hide all bytes
     for (i = 0; i < 8; i++){
         document.getElementById("byte" + i).style.visibility = "hidden";
