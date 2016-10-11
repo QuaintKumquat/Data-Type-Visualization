@@ -4,7 +4,11 @@ var type = "";
 
 function changeP(){
 	value = document.getElementById("input").value;
-	
+	if(type == "ub"){
+		if(value.match("/d+"){
+			document.getElementById("value").innerHTML = "hey";
+		}
+	}
 	document.getElementById('value').innerHTML = value;
 }
 function signedByte(){
