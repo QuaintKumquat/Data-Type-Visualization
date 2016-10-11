@@ -5,7 +5,7 @@ var type = "";
 function changeP(){
 	value = document.getElementById("input").value;
 	if(type == "ub"){
-		if(value.match("/d+"){
+		if(value.match("/d+")){
 			document.getElementById("value").innerHTML = "hey";
 		}
 	}
