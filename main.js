@@ -98,3 +98,23 @@ function showBytes(b,str){
 		}
 	}
 }
+
+function showHex(binStr){
+	hexStr = "";
+	i = 0;
+	for(i = 0;i<binStr.length;i+=4){
+		val = 0;
+		for(k = 0;k<4;k++){
+			val += binStr.charCodeAt(binStr.length-i-k-1) - "0".charCodeAt(0);
+		}
+		char = ""+val;
+		if(val == 10){char = "A";}
+		if(val == 11){char = "B";}
+		if(val == 12){char = "C";}
+		if(val == 13){char = "D";}
+		if(val == 14){char = "E";}
+		if(val == 15){char = "F";}
+		hexStr = char+hexStr;
+	}
+	document.getElementById("hexValue").innerHTML = hexStr;
+}
