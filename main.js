@@ -2,7 +2,11 @@ var value = "";
 var bin = "";
 var type = "";
 
-
+function changeP(){
+	value = document.getElementById("input").value;
+	
+	document.getElementById('value').innerHTML = value;
+}
 function signedByte(){
 	unClick()
 	document.getElementById("sb").style.borderWidth = "5";
