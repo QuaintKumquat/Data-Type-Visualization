@@ -83,6 +83,9 @@ function unClick(){
 	document.getElementById("ub").style.borderWidth = "2";
 	document.getElementById("string").style.borderWidth = "2";
 	document.getElementById("float").style.borderWidth = "2";
+	
+	document.getElementById("input").style.visibility = "visible";
+	document.getElementById("b1").style.visibility = "visible";
 }
 
 function ubBin(n){
