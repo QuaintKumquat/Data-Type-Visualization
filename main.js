@@ -4,6 +4,8 @@ var type = "";
 
 
 function signedByte(){
+	unClick()
+	
 	value = ""+(Math.floor(Math.random()*256) - 128);
 	document.getElementById('value').innerHTML = value;
 	if(value.valueOf() < 0){
@@ -37,6 +39,9 @@ function string(){
 }
 
 function boolean(){
+	unClick()
+	document.getElementById("boolean").style.border-color = "#000000";
+	
 	if(Math.random() < 0.5){
 		document.getElementById('value').innerHTML = "False";
 		bin = "0";
@@ -57,6 +62,10 @@ function float(){
     document.getElementById('type').innerHTML = "Floating Point Decimal";
     type = "f";
     showBytes(4, bin);
+}
+
+function unClick(){
+	document.getElementById("boolean").style.border-color = document.getElementById("boolean").style.color;
 }
 
 function ubBin(n){
