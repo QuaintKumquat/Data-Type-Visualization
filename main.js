@@ -75,9 +75,9 @@ function sBin(str){
 	return t;
 }
 
-function showBytes(b,str){
+function showBytes(b, str){
     var i = 0;
-	showHex(str);
+	showHex(b, str);
     //hide all bytes
     for (i = 0; i < 8; i++){
         document.getElementById("byte" + i).style.visibility = "hidden";
@@ -99,7 +99,7 @@ function showBytes(b,str){
 	}
 }
 
-function showHex(binStr){
+function showHex(b, binStr){
 	hexStr = "";
 	i = 0;
 	for(i = 0;i<binStr.length;i+=4){
@@ -115,6 +115,9 @@ function showHex(binStr){
 		if(val == 14){char = "E";}
 		if(val == 15){char = "F";}
 		hexStr = char+hexStr;
+	}
+	for(i = (binStr.length/4);i<b*2;i++){
+		
 	}
 	document.getElementById("hexValue").innerHTML = hexStr;
 }
