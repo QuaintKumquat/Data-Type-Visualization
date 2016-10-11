@@ -5,6 +5,7 @@ var type = "";
 
 function signedByte(){
 	unClick()
+	document.getElementById("boolean").style.borderWidth = "5";
 	
 	value = ""+(Math.floor(Math.random()*256) - 128);
 	document.getElementById('value').innerHTML = value;
@@ -20,6 +21,9 @@ function signedByte(){
 }
 
 function unsignedByte(){
+	unClick()
+	document.getElementById("boolean").style.borderWidth = "5";
+	
 	value = ""+Math.floor(Math.random()*256);
 	document.getElementById('value').innerHTML = value;
 	bin = ubBin(value.valueOf());
@@ -29,6 +33,9 @@ function unsignedByte(){
 }
 
 function string(){
+	unClick()
+	document.getElementById("boolean").style.borderWidth = "5";
+	
 	var strings = ["ABcd","Hello","1234","abc123"];
 	value = strings[Math.floor(Math.random()*strings.length)];
 	document.getElementById('value').innerHTML = "\""+value+"\"";
@@ -40,7 +47,6 @@ function string(){
 
 function boolean(){
 	unClick()
-	document.getElementById("boolean").style.borderColor = "#000000";
 	document.getElementById("boolean").style.borderWidth = "5";
 	
 	if(Math.random() < 0.5){
@@ -57,6 +63,8 @@ function boolean(){
 }
 
 function float(){
+	unClick()
+	document.getElementById("boolean").style.borderWidth = "5";
     value = "" + 123.45;
     document.getElementById('value').innerHTML = value;
     bin = "0";
@@ -66,7 +74,6 @@ function float(){
 }
 
 function unClick(){
-	document.getElementById("boolean").style.borderColor = document.getElementById("boolean").style.color;
 	document.getElementById("boolean").style.borderWidth = "2";
 }
 
