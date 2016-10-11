@@ -105,7 +105,7 @@ function showHex(binStr){
 	for(i = 0;i<binStr.length;i+=4){
 		val = 0;
 		for(k = 0;k<4;k++){
-			val += binStr.charCodeAt(binStr.length-i-k-1) - "0".charCodeAt(0);
+			val += binStr.charAt(binStr.length-i-k-1).valueOf() * Math.pow(2,k);
 		}
 		char = ""+val;
 		if(val == 10){char = "A";}
