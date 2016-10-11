@@ -40,7 +40,7 @@ function string(){
 
 function boolean(){
 	unClick()
-	document.getElementById("boolean").style.border-color = "#000000";
+	document.getElementById("boolean").style.borderColor = "#000000";
 	
 	if(Math.random() < 0.5){
 		document.getElementById('value').innerHTML = "False";
@@ -65,7 +65,7 @@ function float(){
 }
 
 function unClick(){
-	document.getElementById("boolean").style.border-color = document.getElementById("boolean").style.color;
+	document.getElementById("boolean").style.borderColor = document.getElementById("boolean").style.color;
 }
 
 function ubBin(n){
