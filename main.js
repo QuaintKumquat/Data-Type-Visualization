@@ -117,7 +117,7 @@ function showHex(b, binStr){
 		hexStr = char+hexStr;
 	}
 	for(i = (binStr.length/4);i<b*2;i++){
-		
+		hexStr = "0"+hexStr;
 	}
 	document.getElementById("hexValue").innerHTML = hexStr;
 }
