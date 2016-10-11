@@ -119,5 +119,25 @@ function showHex(b, binStr){
 	for(i = hexStr.length;i<b*2;i++){
 		hexStr = "0"+hexStr;
 	}
-	document.getElementById("hexValue").innerHTML = hexStr;
+	//document.getElementById("hexValue").innerHTML = hexStr;
+	
+	//hide all bytes
+	for (i = 0; i < 8; i++){
+		document.getElementById("byte" + i+"h").style.visibility = "hidden";
+		document.getElementById("byte"+i+"h").style.float = "right";
+	}
+	//shows b bytes
+	for(i = 0;i<b;i++){
+		document.getElementById("byte"+i+"h").style.visibility = "visible";
+		document.getElementById("byte"+i+"h").style.float = "left";
+	}
+	//fills in bits for b bytes
+	for(i = 0;i<b*2;i++){		
+		if(i < hexStr.length){
+			document.getElementById("hex"+Math.floor(i/2)+""+(i%2)).innerHTML = hexStr.charAt(hexStr.length-i-1);
+		}
+		else{
+			document.getElementById("bit"+Math.floor(i/2)+i%2).innerHTML = "0";
+		}
+	}
 }
