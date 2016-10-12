@@ -70,7 +70,9 @@ function boolean(){
 	showBytes(1,bin);
 }
 
-function float() {
+function float(){
+	unClick();
+	document.getElementById("float").style.borderWidth = "5";
     value = 0;
     if (Math.random() < .8) {
         value = 1;
@@ -106,6 +108,8 @@ function float() {
 }
 
 function double(){
+	unClick()
+	document.getElementById("double").style.borderWidth = "5";
     value = 0;
     if (Math.random() < .8) {
         value = 1;
@@ -116,7 +120,8 @@ function double(){
         bin = "1";
     }
     var exp = Math.floor(Math.random() * Math.pow(2,12));
-    var tb = ubBin(exp);
+
+	var tb = ubBin(exp);
     for (var i = tb.length; i < 11; i++) {
         tb = "0" + tb;
     }
@@ -147,6 +152,8 @@ function unClick(){
 	document.getElementById("ub").style.borderWidth = "2";
 	document.getElementById("string").style.borderWidth = "2";
 	document.getElementById("float").style.borderWidth = "2";
+	document.getElementById("float").style.borderWidth = "2";
+	document.getElementById("double").style.borderWidth = "2";
 	
 	document.getElementById("input").style.visibility = "visible";
 	document.getElementById("b1").style.visibility = "visible";
