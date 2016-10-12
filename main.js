@@ -47,10 +47,10 @@ function string(){
 	var strings = ["ABcd","Hello","1234","abc123"];
 	value = strings[Math.floor(Math.random()*strings.length)];
 	document.getElementById('value').innerHTML = "\""+value+"\"";
-	bin = sBin(value);
+	bin = sBin(value) + "00000000";
 	document.getElementById('type').innerHTML = "String";
 	type = "string";
-	showBytes(value.length,bin);
+	showBytes(value.length+1,bin);
 }
 
 function boolean(){
