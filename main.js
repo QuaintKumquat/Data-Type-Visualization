@@ -70,15 +70,75 @@ function boolean(){
 	showBytes(1,bin);
 }
 
-function float(){
-	unClick()
-	document.getElementById("float").style.borderWidth = "5";
-    value = "" + 123.45;
+function float() {
+    value = 0;
+    if (Math.random() < .8) {
+        value = 1;
+        bin = "0"
+    }
+    else {
+        value = -1;
+        bin = "1"
+    }
+    var exp = Math.floor(Math.random() * 256);
+    var tb = ubBin(exp);
+    for (var i = tb.length; i < 8; i++){
+        tb = "0" + tb;
+    }
+    bin = bin + tb;
+    var sig = Math.floor(Math.random() * Math.pow(2, 23));
+    tb = ubBin(sig);
+    for (var i = tb.length; i < 23; i++){
+        tb = "0" + tb;
+    }
+    bin = bin + tb;
+
+    value = (value + (sig * Math.pow(10, -23))) * Math.pow(2, exp - 127);
+    value = value + ""
+    if (value.indexOf(".") == -1){
+        value = value + ".0";
+    }
+
     document.getElementById('value').innerHTML = value;
-    bin = "0";
-    document.getElementById('type').innerHTML = "Floating Point Decimal";
+    document.getElementById('type').innerHTML = "Single Precision Floating Point Decimal";
     type = "f";
     showBytes(4, bin);
+}
+
+function double(){
+    value = 0;
+    if (Math.random() < .8) {
+        value = 1;
+        bin = "0";
+    }
+    else {
+        value = -1;
+        bin = "1";
+    }
+    var exp = Math.floor(Math.random() * Math.pow(2,12));
+    var tb = ubBin(exp);
+    for (var i = tb.length; i < 11; i++) {
+        tb = "0" + tb;
+    }
+    bin = bin + tb;
+    var sig = Math.floor(Math.random() * Math.pow(2, 52));
+    tb = ubBin(sig);
+    for (var i = tb.length; i < 52; i++) {
+        tb = "0" + tb;
+    }
+    bin = bin + tb;
+
+    value = (value + (sig * Math.pow(10, -52))) * Math.pow(2, exp - 1023);
+    value = value + "";
+    if (value.indexOf("Inf") != -1) { double();}
+    if (value.indexOf(".") == -1) {
+        value = value + ".0";
+    }
+
+    document.getElementById('value').innerHTML = value;
+    document.getElementById('type').innerHTML = "Double Precision Floating Point Decimal";
+    type = "d";
+    showBytes(8, bin);
 }
 
 function unClick(){
